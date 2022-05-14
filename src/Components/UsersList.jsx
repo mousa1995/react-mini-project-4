@@ -29,7 +29,8 @@ export default class UsersList extends Component {
                         selectedIndex={this.state.selectedIndex}
                         users={this.users}
                         handleChangeUser={this.handleChangeUser} />
-                    <User />
+                    <User
+                        selectedIndex={this.state.selectedIndex} />
                 </div>
             </>
         )
