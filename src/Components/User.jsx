@@ -24,14 +24,19 @@ export default class User extends React.Component {
     }
 
     render() {
+
+        const { user } = this.state;
         return (
-            <div className="section" >
-                <p>id: 1</p>
-                <p>name: name test</p>
-                <p>username: user name</p>
-                <p>email: test@test.com</p>
-                <p>phone: 009891836658</p>
-            </div>
+            <>
+                {user &&
+                    <div className="section" >
+                        <p>id: {user.id}</p>
+                        <p>name: {user.name}</p>
+                        <p>username: {user.username}</p>
+                        <p>email: {user.email}</p>
+                        <p>phone: {user.phone}</p>
+                    </div>}
+            </>
         )
     }
 }
