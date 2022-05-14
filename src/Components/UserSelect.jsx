@@ -6,23 +6,18 @@ export default class UserSelect extends Component {
             <>
                 <p className="section">
                     Users:
-                    <label>
-                        <input type="radio" name="user" />
-                        1
-                    </label>
-                    <label>
-                        <input type="radio" name="user" />
-                        2
-                    </label>
-                    <label>
-                        <input type="radio" name="user" />
-                        3
-                    </label>
-                    <label>
-                        <input type="radio" name="user" />
-                        4
-                    </label>
-
+                    {this.props.users && this.props.users.map((user, idx) => {
+                        return (
+                            <label key={user}>
+                                <input
+                                    type="radio"
+                                    name="user"
+                                    checked={idx == this.props.selectedIndex}
+                                    onChange={() => this.props.handleChangeUser(idx)} />
+                                {user}
+                            </label>
+                        )
+                    })}
                 </p>
             </>
         )
