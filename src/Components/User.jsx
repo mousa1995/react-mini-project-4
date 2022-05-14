@@ -23,6 +23,16 @@ export default class User extends React.Component {
         })
     }
 
+    componentDidUpdate(prevProps, prevState) {
+        if (prevProps.selectedIndex !== this.props.selectedIndex) {
+            this.getUser(this.props.selectedIndex + 1).then(user => {
+                this.setState({
+                    user
+                })
+            })
+        }
+    }
+
     render() {
 
         const { user } = this.state;
